@@ -57,3 +57,5 @@ app.use('/api/admin/coupon', couponRoute);
 // Customer Routes
 app.use('/api/customer/product', customerProductRoute);
 app.use('/api/customer/cart', customerCartRoute);
+
+module.exports = app; // Export the app
