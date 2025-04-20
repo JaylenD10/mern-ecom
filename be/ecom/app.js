@@ -13,7 +13,7 @@ const customerCartRoute = require('./routes/customer/cart.js');
 
 const app = express();
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 const mongoURI = process.env.MONGODB_URI;
 const corsorigin = process.env.CORS_ORIGIN;
 
@@ -29,7 +29,6 @@ app.get('/', (req, res) => {
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static('fe/src'));
 
 mongoose
   .connect(mongoURI)
