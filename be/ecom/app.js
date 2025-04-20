@@ -13,7 +13,7 @@ const customerCartRoute = require('./routes/customer/cart.js');
 
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 const mongoURI = process.env.MONGODB_URI;
 const corsorigin = process.env.CORS_ORIGIN;
 
