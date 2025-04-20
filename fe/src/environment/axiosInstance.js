@@ -2,7 +2,8 @@ import axios from 'axios';
 import { getToken } from '../utils/common';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: 'http://mern-ecom-pi.vercel.app/api',
+
   validateStatus: function (status) {
     return status >= 200 && status < 300;
   },
