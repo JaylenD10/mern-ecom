@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('fe/src'));
+// app.use(express.static('fe/src'));
 
 mongoose
   .connect(mongoURI)
