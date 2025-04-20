@@ -25,7 +25,7 @@ const corsOption = {
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static('fe/src'));
 
 mongoose
   .connect(mongoURI)
