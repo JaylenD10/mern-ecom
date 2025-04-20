@@ -22,10 +22,6 @@ const corsOption = {
   optionSuccessStatus: 200,
 };
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the API!');
-});
-
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
