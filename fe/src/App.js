@@ -13,6 +13,7 @@ import ViewOrders from './pages/admin/components/view-orders/ViewOrders';
 import PostCoupon from './pages/admin/components/post-coupon/PostCoupon';
 import ViewCoupons from './pages/admin/components/view-coupon/ViewCoupon';
 import Cart from './pages/customer/components/cart/Cart';
+import MyOrders from './pages/customer/components/my-orders/MyOrders';
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
         <Route path="/admin/coupons" element={<ViewCoupons />} />
         {/* Customer component */}
         <Route path="/customer/dashboard" element={<CustomerDashboard />} />
-        <Route path="/customer/cart" element={<Cart />} />f
+        <Route path="/customer/cart" element={<Cart />} />
+        <Route path="/customer/orders" element={<MyOrders />} />
       </Routes>
     </>
   );

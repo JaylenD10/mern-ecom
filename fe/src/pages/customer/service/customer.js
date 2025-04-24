@@ -39,3 +39,47 @@ export const getCartByUser = async () => {
     throw error;
   }
 };
+
+export const applyCoupon = async (code) => {
+  try {
+    const response = await instance.get(`/api/customer/coupon/${code}`);
+    return response;
+  } catch (error) {
+    console.error('Error applying coupon: ', error);
+    throw error;
+  }
+};
+
+export const increaseProductQuantity = async (productId) => {
+  try {
+    const response = await instance.post(
+      `/api/customer/cart/increase/${productId}`
+    );
+    return response;
+  } catch (error) {
+    console.error('Error increasing quantity: ', error);
+    throw error;
+  }
+};
+
+export const decreaseProductQuantity = async (productId) => {
+  try {
+    const response = await instance.post(
+      `/api/customer/cart/decrease/${productId}`
+    );
+    return response;
+  } catch (error) {
+    console.error('Error increasing quantity: ', error);
+    throw error;
+  }
+};
+
+export const placeOrder = async (data) => {
+  try {
+    const response = await instance.post(`/api/customer/order`, data);
+    return response;
+  } catch (error) {
+    console.error('Error placing order: ', error);
+    throw error;
+  }
+};

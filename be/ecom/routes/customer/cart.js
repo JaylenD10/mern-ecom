@@ -1,6 +1,8 @@
 const {
   postProductToCart,
   getCartByUser,
+  increaseProductQuantity,
+  decreaseProductQuantity,
 } = require('../../controllers/customer/cart');
 const {
   authenticateJWT,
@@ -18,5 +20,19 @@ router.post(
 );
 
 router.get('/', authenticateJWT, authorizeRole('CUSTOMER'), getCartByUser);
+
+router.post(
+  '/increase/:productId',
+  authenticateJWT,
+  authorizeRole('CUSTOMER'),
+  increaseProductQuantity
+);
+
+router.post(
+  '/decrease/:productId',
+  authenticateJWT,
+  authorizeRole('CUSTOMER'),
+  decreaseProductQuantity
+);
 
 module.exports = router;

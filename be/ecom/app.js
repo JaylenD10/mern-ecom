@@ -10,6 +10,8 @@ const customerProductRoute = require('./routes/customer/product.js');
 const faqRoute = require('./routes/admin/faq.js');
 const couponRoute = require('./routes/admin/coupon.js');
 const customerCartRoute = require('./routes/customer/cart.js');
+const customerCouponRoute = require('./routes/customer/coupon.js');
+const customerOrderRoute = require('./routes/customer/order.js');
 
 const app = express();
 
@@ -52,3 +54,5 @@ app.use('/api/admin/coupon', couponRoute);
 // Customer Routes
 app.use('/api/customer/product', customerProductRoute);
 app.use('/api/customer/cart', customerCartRoute);
+app.use('/api/customer/coupon', customerCouponRoute);
+app.use('/api/customer/order', customerOrderRoute);

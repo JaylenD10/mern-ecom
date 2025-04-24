@@ -140,6 +140,9 @@ export default function Header() {
               <Button component={Link} to="/customer/cart" color="inherit">
                 Cart
               </Button>
+              <Button component={Link} to="/customer/orders" color="inherit">
+                Orders
+              </Button>
               <Button onClick={handleLogout} color="inherit">
                 Logout
               </Button>
