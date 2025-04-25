@@ -19,3 +19,15 @@ export const signin = async (signinDto) => {
     throw error;
   }
 };
+
+export const trackOrder = async (trackingId) => {
+  try {
+    const response = await instance.get(
+      `/api/customer/order/search/${trackingId}`
+    );
+    return response;
+  } catch (error) {
+    console.error('Error getting order: ', error);
+    throw error;
+  }
+};

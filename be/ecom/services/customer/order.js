@@ -42,4 +42,33 @@ const getOrdersByUser = async (userId) => {
   return { status: 200, data: orders };
 };
 
-module.exports = { placeTheOrder, getOrdersByUser };
+const getOrdersByTrackingId = async (trackingId) => {
+  return await Order.findOne({
+    trackingId,
+  }).populate('user');
+};
+
+const getOrderedProducts = async (orderId) => {
+  const order = await Order.findById(orderId).populate({
+    path: 'cartItem',
+    populate: { path: 'product' },
+  });
+
+  if (!order) return { status: 404, data: 'O rder not found' };
+
+  const orderedProducts = order.cartItem.map((item) => {
+    return {
+      ...item.product._doc,
+      img: item.product.img ? item.product.img.toString('base64') : null,
+    };
+  });
+
+  return { status: 200, data: orderedProducts };
+};
+
+module.exports = {
+  placeTheOrder,
+  getOrdersByUser,
+  getOrdersByTrackingId,
+  getOrderedProducts,
+};

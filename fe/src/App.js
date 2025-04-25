@@ -14,6 +14,7 @@ import PostCoupon from './pages/admin/components/post-coupon/PostCoupon';
 import ViewCoupons from './pages/admin/components/view-coupon/ViewCoupon';
 import Cart from './pages/customer/components/cart/Cart';
 import MyOrders from './pages/customer/components/my-orders/MyOrders';
+import TrackOrder from './pages/auth/components/track-order/TrackOrder';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         {/* Auth Components */}
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Signin />} />
+        <Route path="/track-order" element={<TrackOrder />} />
         {/* Admin component */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/category/post" element={<PostCategory />} />

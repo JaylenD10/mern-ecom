@@ -61,6 +61,9 @@ export default function Header() {
               <Button component={Link} to="/login" color="inherit">
                 Login
               </Button>
+              <Button component={Link} to="/track-order" color="inherit">
+                Track Order
+              </Button>
               <Button component={Link} to="/register" color="inherit">
                 Register
               </Button>
