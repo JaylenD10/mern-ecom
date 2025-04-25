@@ -83,3 +83,13 @@ export const placeOrder = async (data) => {
     throw error;
   }
 };
+
+export const getOrders = async () => {
+  try {
+    const response = await instance.get('/api/customer/order');
+    return response;
+  } catch (error) {
+    console.error('Error getting orders: ', error);
+    throw error;
+  }
+};

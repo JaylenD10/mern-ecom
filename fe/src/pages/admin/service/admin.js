@@ -109,3 +109,23 @@ export const getCoupons = async () => {
     throw error;
   }
 };
+
+export const getOrders = async () => {
+  try {
+    const response = await instance.get('/api/admin/order');
+    return response;
+  } catch (error) {
+    console.error('Error getting orders: ', error);
+    throw error;
+  }
+};
+
+export const updateOrderStatus = async (obj) => {
+  try {
+    const response = await instance.post('/api/admin/order', obj);
+    return response;
+  } catch (error) {
+    console.error('Error updateing order status: ', error);
+    throw error;
+  }
+};

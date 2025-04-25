@@ -1,4 +1,7 @@
-const { placeTheOrder } = require('../../services/customer/order');
+const {
+  placeTheOrder,
+  getOrdersByUser,
+} = require('../../services/customer/order');
 
 const placeOrder = async (req, res) => {
   try {
@@ -14,4 +17,17 @@ const placeOrder = async (req, res) => {
   }
 };
 
-module.exports = { placeOrder };
+const getOrders = async (req, res) => {
+  try {
+    const userId = req.user.userId;
+    const response = await getOrdersByUser(userId);
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+module.exports = { placeOrder, getOrders };
