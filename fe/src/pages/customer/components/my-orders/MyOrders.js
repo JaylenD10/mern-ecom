@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   CircularProgress,
+  Grid,
   Paper,
   Table,
   TableBody,
@@ -14,7 +15,7 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
-import { ShoppingBagOutlined } from '@mui/icons-material';
+import { RateReview, ShoppingBagOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 export default function MyOrders() {
@@ -112,6 +113,21 @@ export default function MyOrders() {
                         {formatPlacedAtDate(row.updatedAt)}
                       </TableCell>
                       <TableCell align="right">{row.orderStatus}</TableCell>
+                      <TableCell align="right">
+                        <Grid container spacing={2} sx={{ cursor: 'pointer' }}>
+                          <Grid>
+                            {row.orderStatus === 'DELIVERED' && (
+                              <RateReview
+                                onClick={() =>
+                                  navigate(
+                                    `/customer/view-ordered-products/${row._id}`
+                                  )
+                                }
+                              />
+                            )}
+                          </Grid>
+                        </Grid>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

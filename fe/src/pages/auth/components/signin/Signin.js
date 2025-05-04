@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useSnackbar } from 'notistack';
-import { signin } from '../../../../services/auth/auth';
+import { signin } from '../../services/auth/auth';
 import {
   isAdminLoggedIn,
   isCustomerLoggedIn,

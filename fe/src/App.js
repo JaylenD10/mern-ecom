@@ -15,6 +15,10 @@ import ViewCoupons from './pages/admin/components/view-coupon/ViewCoupon';
 import Cart from './pages/customer/components/cart/Cart';
 import MyOrders from './pages/customer/components/my-orders/MyOrders';
 import TrackOrder from './pages/auth/components/track-order/TrackOrder';
+import ViewWishlist from './pages/customer/components/view-wishlist-products/ViewWishlist';
+import ViewOrderedProducts from './pages/customer/components/view-ordered-products/ViewOrderedProducts';
+import PostReview from './pages/customer/components/post-review/PostReview';
+import ViewProductDetails from './pages/customer/components/view-product-details/ViewProductDetails';
 
 function App() {
   return (
@@ -39,6 +43,16 @@ function App() {
         <Route path="/customer/dashboard" element={<CustomerDashboard />} />
         <Route path="/customer/cart" element={<Cart />} />
         <Route path="/customer/orders" element={<MyOrders />} />
+        <Route path="/customer/wishlist" element={<ViewWishlist />} />
+        <Route
+          path="/customer/view-ordered-products/:orderId"
+          element={<ViewOrderedProducts />}
+        />
+        <Route path="/customer/review/:productId" element={<PostReview />} />
+        <Route
+          path="/customer/view-product-details/:productId"
+          element={<ViewProductDetails />}
+        />
       </Routes>
     </>
   );

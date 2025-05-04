@@ -1,4 +1,4 @@
-import instance from '../../environment/axiosInstance';
+import instance from '../../../../environment/axiosInstance';
 
 export const signup = async (signupDto) => {
   try {

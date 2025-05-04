@@ -146,6 +146,9 @@ export default function Header() {
               <Button component={Link} to="/customer/orders" color="inherit">
                 Orders
               </Button>
+              <Button component={Link} to="/customer/wishlist" color="inherit">
+                Wishlist
+              </Button>
               <Button onClick={handleLogout} color="inherit">
                 Logout
               </Button>

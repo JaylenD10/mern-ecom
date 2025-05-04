@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { useSnackbar } from 'notistack';
-import { trackOrder } from '../../../../services/auth/auth';
+import { trackOrder } from '../../services/auth/auth';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function TrackOrder() {

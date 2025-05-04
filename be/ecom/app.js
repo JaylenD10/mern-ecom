@@ -14,6 +14,7 @@ const customerCartRoute = require('./routes/customer/cart.js');
 const customerCouponRoute = require('./routes/customer/coupon.js');
 const customerOrderRoute = require('./routes/customer/order.js');
 const customerWishlistRoute = require('./routes/customer/wishlist.js');
+const customerReviewRoute = require('./routes/customer/review.js');
 
 const app = express();
 
@@ -60,3 +61,4 @@ app.use('/api/customer/cart', customerCartRoute);
 app.use('/api/customer/coupon', customerCouponRoute);
 app.use('/api/customer/order', customerOrderRoute);
 app.use('/api/customer/wishlist', customerWishlistRoute);
+app.use('/api/customer/review', customerReviewRoute);

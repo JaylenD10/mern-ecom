@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useSnackbar } from 'notistack';
-import { signup } from '../../../../services/auth/auth';
+import { signup } from '../../services/auth/auth';
 
 const defaultTheme = createTheme();
 
