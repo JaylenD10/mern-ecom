@@ -1,6 +1,7 @@
 const {
   getAllProducts,
   searchProductByName,
+  getProductById,
 } = require('../../controllers/customer/product');
 const {
   authenticateJWT,
@@ -19,6 +20,13 @@ router.get(
   authenticateJWT,
   authorizeRole('CUSTOMER'),
   searchProductByName
+);
+
+router.get(
+  '/:productId',
+  authenticateJWT,
+  authorizeRole('CUSTOMER'),
+  getProductById
 );
 
 module.exports = router;

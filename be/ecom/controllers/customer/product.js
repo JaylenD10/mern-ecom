@@ -1,6 +1,7 @@
 const {
   fetchAllProducts,
   searchProduct,
+  fetchProductById,
 } = require('../../services/customer/product');
 
 const getAllProducts = async (req, res) => {
@@ -26,7 +27,21 @@ const searchProductByName = async (req, res) => {
   }
 };
 
+const getProductById = async (req, res) => {
+  try {
+    const productId = req.params.productId;
+    const response = await fetchProductById(productId);
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: 'Internal server error',
+    });
+  }
+};
+
 module.exports = {
   getAllProducts,
   searchProductByName,
+  getProductById,
 };
