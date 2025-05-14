@@ -93,3 +93,29 @@ export const getOrders = async () => {
     throw error;
   }
 };
+
+export const getOrderedProducts = async (orderId) => {
+  try {
+    const response = await instance.get(
+      `/api/customer/order/products/${orderId}`
+    );
+    return response;
+  } catch (error) {
+    console.error('Error getting orders: ', error);
+    throw error;
+  }
+};
+
+export const postReview = async (reviewData) => {
+  try {
+    console.log('Before sending: ', reviewData);
+    const response = await instance.post(`/api/customer/review/`, reviewData);
+    console.log(response);
+    console.log('After sending: ', reviewData);
+    return response;
+  } catch (error) {
+    console.log('Error sending: ', reviewData);
+    console.error('Error posting review: ', error);
+    throw error;
+  }
+};

@@ -9,7 +9,7 @@ const giveReview = async (req, res) => {
     const review = await getReviewOnProduct(reviewData);
     res.status(201).json({
       message: 'Review published successfully!',
-      product,
+      review,
     });
   } catch (error) {
     res.status(400).json({
