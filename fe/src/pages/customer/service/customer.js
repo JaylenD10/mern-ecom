@@ -108,13 +108,9 @@ export const getOrderedProducts = async (orderId) => {
 
 export const postReview = async (reviewData) => {
   try {
-    console.log('Before sending: ', reviewData);
     const response = await instance.post(`/api/customer/review/`, reviewData);
-    console.log(response);
-    console.log('After sending: ', reviewData);
     return response;
   } catch (error) {
-    console.log('Error sending: ', reviewData);
     console.error('Error posting review: ', error);
     throw error;
   }

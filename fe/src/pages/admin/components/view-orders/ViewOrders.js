@@ -116,7 +116,7 @@ export default function ViewOrders() {
                     <TableCell align="right">Amount</TableCell>
                     <TableCell align="right">Description</TableCell>
                     <TableCell align="right">Address</TableCell>
-                    <TableCell align="right">Placed At</TableCell>
+                    <TableCell align="right">Placed On</TableCell>
                     <TableCell align="right">Status</TableCell>
                     <TableCell align="right">Action</TableCell>
                   </TableRow>
