@@ -145,7 +145,7 @@ export default function ViewProductDetails() {
                   sx={{ fontWeight: 'bold', color: 'primary.main' }}
                 >
                   <Box component="span" sx={{ color: 'black' }}>
-                    {/* {review.user.firstName} */}
+                    {review.user.firstName}
                   </Box>{' '}
                   {review.description}
                 </Typography>
