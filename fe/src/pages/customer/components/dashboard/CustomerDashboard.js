@@ -21,7 +21,7 @@ import {
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
-import { AddShoppingCart } from '@mui/icons-material';
+import { AddShoppingCart, Preview } from '@mui/icons-material';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -94,9 +94,10 @@ export default function CustomerDashboard() {
       setLoading(false);
     }
   };
-  // const handleUpdateProduct = async (productId) => {
-  //   navigate(`/admin/product/${productId}/edit`);
-  // };
+  const handleViewClick = async (productId) => {
+    navigate(`/customer/view-product-details/${productId}`);
+  };
+
   return (
     <>
       <Grid
@@ -162,12 +163,9 @@ export default function CustomerDashboard() {
                 </CardContent>
                 <CardActions>
                   <Grid container spacing={2} sx={{ cursor: 'pointer' }}>
-                    {/* <Grid>
-                      <EditIcon
-                        sx={{ color: 'green' }}
-                        onClick={() => handleUpdateProduct(product._id)}
-                      />
-                    </Grid> */}
+                    <Grid>
+                      <Preview onClick={() => handleViewClick(product._id)} />
+                    </Grid>
                     <Grid>
                       <AddShoppingCart
                         sx={{ color: 'green' }}

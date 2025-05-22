@@ -54,7 +54,7 @@ const getOrderedProducts = async (orderId) => {
     populate: { path: 'product' },
   });
 
-  if (!order) return { status: 404, data: 'O rder not found' };
+  if (!order) return { status: 404, data: 'Order not found' };
 
   const orderedProducts = order.cartItem.map((item) => {
     return {

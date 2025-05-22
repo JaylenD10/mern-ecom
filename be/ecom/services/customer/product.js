@@ -29,6 +29,7 @@ const fetchProductById = async (productId) => {
   const reviewsWithoutBase64 = await Review.find({
     product: productId,
   }).populate('user');
+
   const reviews = reviewsWithoutBase64.map((review) => ({
     ...review._doc,
     img: review.img ? review.img.toString('base64') : null,

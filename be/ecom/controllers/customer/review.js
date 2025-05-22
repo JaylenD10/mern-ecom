@@ -2,7 +2,7 @@ const { getReviewOnProduct } = require('../../services/customer/review');
 
 const giveReview = async (req, res) => {
   try {
-    const reviewData = req.body;
+    const reviewData = { ...req.body, user: req.user.userId };
     if (req.file) {
       reviewData.img = req.file.buffer;
     }
