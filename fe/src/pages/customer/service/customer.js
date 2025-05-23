@@ -125,3 +125,23 @@ export const getProductById = async (productId) => {
     throw error;
   }
 };
+
+export const postProductToWishlist = async (productId) => {
+  try {
+    const response = await instance.post(`/api/customer/wishlist/${productId}`);
+    return response;
+  } catch (error) {
+    console.error('Error posting product to wishlist: ', error);
+    throw error;
+  }
+};
+
+export const getWishlistProducts = async () => {
+  try {
+    const response = await instance.get(`/api/customer/wishlist`);
+    return response;
+  } catch (error) {
+    console.error('Error getting wishlist products: ', error);
+    throw error;
+  }
+};

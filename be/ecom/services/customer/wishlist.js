@@ -14,8 +14,6 @@ const addProductToWishlist = async (userId, productId) => {
     user: userId,
   }).save();
 
-  await activeOrder.save();
-
   return { status: 201, data: wishlist };
 };
 

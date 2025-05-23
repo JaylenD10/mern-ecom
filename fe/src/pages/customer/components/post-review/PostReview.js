@@ -23,7 +23,6 @@ const defaultTheme = createTheme();
 
 export default function PostReview() {
   const { productId } = useParams();
-  // const { userId } = req.body.user;
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
   const [review, setReview] = useState({
@@ -51,7 +50,6 @@ export default function PostReview() {
       newFormData.append('rating', review.rating);
       newFormData.append('description', review.description);
       newFormData.append('product', productId);
-      // newFormData.append('user', userId);
       newFormData.append('img', review.img);
       newFormData.forEach((value, key) => {
         console.log(`${key}: ${value}`);

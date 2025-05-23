@@ -11,11 +11,13 @@ import {
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProductById } from '../../service/customer';
+import { getProductById, postProductToWishlist } from '../../service/customer';
 import { FavoriteBorder } from '@mui/icons-material';
+import { useSnackbar } from 'notistack';
 
 export default function ViewProductDetails() {
   const { productId } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
   const [product, setProduct] = useState(null);
   const [FAQS, setFAQS] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -40,6 +42,28 @@ export default function ViewProductDetails() {
   useEffect(() => {
     fetchProduct();
   }, []);
+
+  const addToWishList = async () => {
+    setLoading(true);
+    try {
+      const response = await postProductToWishlist(productId);
+      if (response.status === 201) {
+        enqueueSnackbar('Product Added to Wishlist Successfully', {
+          variant: 'success',
+          autoHideDuration: 5000,
+        });
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        enqueueSnackbar('Product already in whishlist', {
+          variant: 'error',
+          autoHideDuration: 5000,
+        });
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -82,12 +106,12 @@ export default function ViewProductDetails() {
                 <Typography variant="body2" color="text.secondary">
                   {product.description}
                 </Typography>
-                {/* <IconButton
+                <IconButton
                   onClick={addToWishList}
                   sx={{ color: 'red', mt: 2 }}
                 >
                   <FavoriteBorder sx={{ fontSize: 30 }} />
-                </IconButton> */}
+                </IconButton>
               </CardContent>
             </Box>
           </Card>
