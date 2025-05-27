@@ -41,7 +41,7 @@ export default function ViewProductDetails() {
 
   useEffect(() => {
     fetchProduct();
-  });
+  }, []);
 
   const addToWishList = async () => {
     setLoading(true);

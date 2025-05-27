@@ -93,7 +93,7 @@ export default function UpdateProduct() {
   useEffect(() => {
     fetchCategories();
     fetchProductById();
-  });
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
