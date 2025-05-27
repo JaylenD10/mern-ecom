@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "server/ecom/app.js", "use": "@vercel/node" },
+    { "src": "client/package.json", "use": "@vercel/static-build" }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/server/ecom/app.js" },
+    { "source": "(.*)", "destination": "/client/src/index.js" }
+  ]
+}
