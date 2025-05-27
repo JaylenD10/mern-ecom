@@ -5,7 +5,7 @@
     { "src": "client/package.json", "use": "@vercel/static-build" }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/server/ecom/app.js" },
-    { "source": "(.*)", "destination": "/client/src/index.js" }
+    { "source": "/ecom/(.*)", "destination": "/server/ecom/app.js" },
+    { "source": "(.*)", "destination": "/client/build/index.html" }
   ]
 }
