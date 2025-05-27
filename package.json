@@ -3,6 +3,7 @@
     "concurrently": "^9.1.2"
   },
   "scripts": {
+    "build": "concurrently \"npm run build --prefix client\" \"npm run build --prefix server\"",
     "start": "concurrently \"npm run-script server\" \"npm run-script client\"",
     "server": "npm start --prefix server",
     "client": "npm start --prefix client"
