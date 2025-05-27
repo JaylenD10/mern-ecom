@@ -10,12 +10,10 @@ import {
   CardContent,
 } from '@mui/material';
 import { useState } from 'react';
-import { useSnackbar } from 'notistack';
 import { trackOrder } from '../../services/auth/auth';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function TrackOrder() {
-  const { enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
   const [trackingId, setTrackingId] = useState('');
   const [order, setOrder] = useState();

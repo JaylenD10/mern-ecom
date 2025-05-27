@@ -1,6 +1,6 @@
 import { useSnackbar } from 'notistack';
-import { useId, useState } from 'react';
-import { useActionData, useNavigate, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { postReview } from '../../service/customer';
 import {
   Avatar,

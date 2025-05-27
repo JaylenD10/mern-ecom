@@ -6,7 +6,7 @@ import AdminDashboard from './pages/admin/components/dashboard/AdminDashboard';
 import CustomerDashboard from './pages/customer/components/dashboard/CustomerDashboard';
 import PostCategory from './pages/admin/components/post-category/PostCategory';
 import PostProduct from './pages/admin/components/post-product/PostProduct';
-import UpdateProduct from './pages/admin/components/update product/UpdateProduct';
+import UpdateProduct from './pages/admin/components/update-product/UpdateProduct';
 import PostFAQ from './pages/admin/components/post-faq/PostFAQ';
 import Analytics from './pages/admin/components/analytics/Analytics';
 import ViewOrders from './pages/admin/components/view-orders/ViewOrders';

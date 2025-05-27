@@ -14,7 +14,7 @@ import {
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { CategoryOutlined, Quiz } from '@mui/icons-material';
+import { Quiz } from '@mui/icons-material';
 import { postFAQ } from '../../service/admin';
 
 const defaultTheme = createTheme();
