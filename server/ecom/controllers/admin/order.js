@@ -1,6 +1,7 @@
 const {
   fetchOrders,
   changeOrderStatus,
+  fetchAnalytics,
 } = require('../../services/admin/order');
 const {
   getOrdersByTrackingId,
@@ -57,9 +58,22 @@ const fetchOrderedProducts = async (req, res) => {
   }
 };
 
+const getAnalytics = async (req, res) => {
+  try {
+    const response = await fetchAnalytics();
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
   getOrders,
   updateOrderStatus,
   fetchOrderByTrackingId,
   fetchOrderedProducts,
+  getAnalytics,
 };
