@@ -60,9 +60,7 @@ const fetchAnalytics = async () => {
   const currentMonthEarnings = await Order.aggregate([
     {
       $match: {
-        createdAt: $gte,
-        currentMonthStartDate,
-        $lte: nextMonthStartDate,
+        createdAt: { $gte: currentMonthStartDate, $lte: nextMonthStartDate },
       },
     },
     { $group: { _id: null, totalEarnings: { $sum: '$totalAmount' } } },

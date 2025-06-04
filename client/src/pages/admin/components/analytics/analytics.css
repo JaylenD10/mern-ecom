@@ -1,0 +1,67 @@
+.analytics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.analytics-card {
+  width: 300px;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+.metric-avatar {
+  font-size: 24;
+  background-color: #e0e0e0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.metric-subtext {
+  font-size: 14px;
+  color: #667;
+}
+
+.previous-month {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.order-status-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.order-status-card {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.status-avatar {
+  font-size: 24px;
+  background-color: #e0e0e0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-value {
+  font-size: 20px;
+  font-weight: bold;
+}

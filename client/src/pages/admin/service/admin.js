@@ -129,3 +129,13 @@ export const updateOrderStatus = async (obj) => {
     throw error;
   }
 };
+
+export const fetchAnalytics = async () => {
+  try {
+    const response = await instance.get('/api/admin/order/analytics');
+    return response;
+  } catch (error) {
+    console.error('Error getting analytics: ', error);
+    throw error;
+  }
+};
