@@ -77,7 +77,7 @@ const fetchAnalytics = async () => {
 
   return {
     status: 200,
-    date: {
+    data: {
       placed,
       shipped,
       delivered,
